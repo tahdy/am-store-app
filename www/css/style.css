@@ -1,0 +1,74 @@
+/* Empty. Add your own CSS if you like */
+.popover {
+  height: auto !important;
+}
+.popover ion-header-bar {
+  position: relative;
+}
+.popover ion-content {
+  top: 0;
+  position: relative;
+}
+.popover-inner-content {
+  width: 100%;
+  padding: 5px 20px;
+}
+th {
+    background-color:crimson;
+   border: 1px solid red;
+    height: 40px;
+    width: auto;
+    font-size:19px;
+    vertical-align:middle;
+}
+
+td {
+
+
+    border-style: hidden;
+        height: 60px;
+    width: auto;
+    font-size:19px;
+     vertical-align:middle;
+
+}
+table {
+     border-collapse: separate;
+    border-spacing: 1px 2px;
+    empty-cells: hide;
+    width: 150%;
+}
+ .my-drop-zone {
+            border: dotted 3px lightgray;
+        }
+
+        .nv-file-over {
+            border: dotted 3px red;
+        }
+
+        /* Default class applied to drop zones on over */
+        .another-file-over-class {
+            border: dotted 3px green;
+        }
+  canvas {
+                background-color: #f3f3f3;
+                -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+                -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+                box-shadow: 3px 3px 3px 0 #e3e3e3;
+                border: 1px solid #c3c3c3;
+                height: 100px;
+                margin: 6px 0 0 6px;
+            }
+
+.box {
+  height: 300px;
+    width: :300px;
+}
+
+ion-slides {
+  height: 100vh !important;
+}
+
+input{
+  border-right-color: black;
+}
