@@ -1,0 +1,22 @@
+<ion-view title="Check Out">
+    <ion-content padding="'true'" class="has-header">
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="eng_amalmagdy94@yahoo.com" />
+        <input type="hidden" name="lc" value="CA" />
+        <input type="hidden" name="item_name" value="{{item.cart_item_qty}}" />
+        <input type="hidden" name="item_number" value="{{total_qty}}" />
+        <input type="hidden" name="quantity" value="{{total_qty}}" />
+        <input type="hidden" name="amount" value="{{total_amount}}" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="hidden" name="button_subtype" value="services" />
+        <input type="hidden" name="no_note" value="1" />
+        <input type="hidden" name="tax_rate" value="7.5" />
+        <input type="hidden" name="shipping" value="2.29" />
+        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+    </ion-content>
+</ion-view>

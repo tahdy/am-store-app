@@ -1,0 +1,44 @@
+<ion-view view-title="Product Details">
+  <ion-nav-buttons side="secondary">
+   <div class="buttons">
+     <button class="button button-icon icon ion-more"
+       ng-click="openPopover($event)"></button>
+   </div>
+ </ion-nav-buttons>
+<ion-content>
+<div class="card">
+<div class="item item-body item-text-wrap">
+<img class="full-image" ng-src="{{baseURL+product.images[0]}}"
+alt="{{product.name}}">
+<h2>{{product.name}}
+<span style="font-size:75%">{{product.price | currency}}</span>
+<span class="badge badge-assertive">{{product.label}}</span></h2>
+<p>{{product.description}}</p>
+
+   	<a  ng-click="addToCart(product.id,product.images[0],product.name,product.price)" class="button  button-royal button-clear   icon ion-android-cart">  </a>
+
+</div>
+</div>
+
+ <div class="row" >
+<div class="col col-offset-10">
+<h4>Customer Comments &nbsp;&nbsp;&nbsp;
+<small>Sort by: &nbsp;<input type="text" ng-model="orderText">
+</small></h4>
+<ul class="list">
+<li ng-repeat="comment in product.comments |
+orderBy:orderText">
+<blockquote>
+  <button  ng-show="comment.customer.id== currentUser.id" ng-click="deleteComment(comment.id)" class="button  button-dark button-clear icon ion-close"
+type="button"> </button>
+<p><rating readonly="readOnly" ng-model="comment.rating" max="rating.max" ></rating></p>
+<p>{{comment.comment}}</p>
+ <footer>{{comment.customer.firstname}} {{comment.customer.lastname}}, {{comment.updatedAt | date:'MMM. dd, yyyy'}}</footer>
+</blockquote>
+</li>
+</ul>
+</div>
+</div>
+</ion-content>
+
+</ion-view>

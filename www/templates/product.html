@@ -1,0 +1,17 @@
+<ion-view view-title="Products">
+<ion-content>
+<ion-list>
+<ion-item ng-repeat="product in products | filter:{category: filtText}"
+href="#/app/product/{{product.id}}" class="item-thumbnail-left">
+<img ng-src="{{baseURL+product.images[0]}}">
+<h2>{{product.name}}
+<span style="font-size:75%">{{product.price | currency}}</span>
+<span class="badge badge-assertive">{{product.label}}</span></h2>
+<p>{{product.description}}</p>
+<ion-option-button class="button-assertive icon ion-plus-circled" ng-show="currentUser.id"
+   ng-click="addFavorite(product.id)">
+</ion-option-button>
+</ion-item>
+</ion-list>
+ </ion-content>
+</ion-view>

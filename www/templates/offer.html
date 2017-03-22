@@ -1,0 +1,25 @@
+<ion-view view-title="Offers">
+    <div class="tabs-striped tabs-color-royal">
+<ul class="tabs">
+<li ng-class="{active:isSelected(1)}" class="tab-item">
+<a ng-click="select(1)">Sell</a></li>
+<li ng-class="{active:isSelected(2)}" class="tab-item">
+<a ng-click="select(2)">Borrow</a></li>
+<li ng-class="{active:isSelected(3)}" class="tab-item">
+<a ng-click="select(3)">Exchange</a></li>
+
+</ul>
+</div>
+<ion-content>
+<ion-list>
+<ion-item ng-repeat="offer in offers | filter: {mychannel:filtText} "
+href="#/app/offer/{{offer.id}}" class="item-thumbnail-left">
+<img ng-src="{{baseURL+offer.images[0]}}">
+<h2>{{offer.name}}
+<span style="font-size:75%">{{offer.price | currency}}</span>
+<span class="badge badge-assertive">{{offer.label}}</span></h2>
+<p>{{offer.description}}</p>
+</ion-item>
+</ion-list>
+</ion-content>
+</ion-view>

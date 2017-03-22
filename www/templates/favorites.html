@@ -1,0 +1,22 @@
+<ion-view view-title="My Favorites">
+    <ion-nav-buttons side="secondary">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="toggleDelete()"></button>
+      </div>
+    </ion-nav-buttons>
+  <ion-content>
+    <ion-list show-delete="shouldShowDelete">
+      <ion-item ng-repeat="favorite in favorites" href="#/app/product/{{favorite.products.id}}" class="item-thumbnail-left" on-swipe-left="deleteFavorite(favorite.id)">
+        <img ng-src="{{baseURL+product.images[0]}}">
+        <h2>{{favorite.products.name}}
+        <span style="font-size:75%">{{favorite.products.price/100 | currency}}</span>
+        <span class="badge badge-assertive">{{favorite.products.label}}</span></h2>
+        
+        <ion-delete-button class="ion-minus-circled"
+          ng-click="deleteFavorite(favorite.id)">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,122 @@
+<ion-modal-view>
+    <ion-header-bar>
+    <h1 class="title">Add Offer</h1>
+<div class="buttons">
+<button style="color:black" class="button button-clear"
+ng-click="closeAddoffer()">Close</button>
+</div>
+    </ion-header-bar>
+    <ion-content>
+<form id="addofferForm" name="addofferForm" ng-submit="doOffer()">
+    <div class="list">
+            <label class="item item-input">
+          <span class="input-label">product name </span>
+          <input type="text" ng-model="myoffer.name">
+        </label>
+            <label class="item item-input">
+          <span class="input-label">State what is your offer?</span>
+                <select ng-model="myoffer.mychannel"
+                     ng-options="channel.value as channel.label for channel in channels">
+                         <option value="">sell ,borrow or Exchange?</option>
+                            </select>
+        </label>
+
+                    <label class="item item-input">
+          <span class="input-label">Price </span>
+          <input type="number" ng-model="myoffer.price">
+        </label>
+
+         <label class="item item-input">
+          <span class="input-label">Description</span>
+            <textarea type="text" ng-model="myoffer.description" rows="6" ></textarea>
+        </label>
+                <div class="row">
+                    <div class="col">
+          <span class="input-label">product image</span></div>
+                    <div class="col">
+                         <ion-scroll zooming="true" direction="xy" style="width: auto; height: auto">
+
+                             <md-button type="file"  ng-click="getImageSaveContact()" nv-file-select="" uploader="uploader" removeAfterUpload="true" >
+                                Image picker  </md-button><br/><img id="tempImage" ng-src="{{collection.selectedImage}}" style="width:100%; height: auto;"/>
+                             <input class="bottom-marg-15" type="file" name="file" file="file" nv-file-select="" uploader="uploader" removeAfterUpload="true"  multiple   />
+                                    <div class="col-md-9" style="margin-bottom: 40px">
+
+                    <p>Queue length: {{ uploader.queue.length }}</p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="50%">Name</th>
+                                <th ng-show="uploader.isHTML5">Size</th>
+
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td>
+                                    <strong >{{ item.file.name }}</strong>
+                                    <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                                </td>
+                                <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                <td ng-show="uploader.isHTML5">
+
+                                </td>
+                                <td class="text-center" style="border-style: hidden;vertical-align:middle;">
+
+
+                                    <span ng-show="item.isError"><i class="icon ion-close-round"> </i></span>
+                                </td>
+                                <td style="border-style: hidden;vertical-align:middle;" nowrap>
+
+
+                                    <button type="button" class="button icon-left ion-close-round button-clear button-assertive"  ng-click="item.remove()">remove
+
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <div>
+                            Queue progress:
+                            <div class="progress" style="">
+                                <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                            </div>
+                        </div>
+                        <button type="button" class="button button-small button-positive" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                             <i class="icon ion-ios-cloud-upload-outline"></i> Upload all
+                        </button>
+                        <button type="button" class="button button-small button-energized" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                             <i class="icon ion-android-cancel"></i> Cancel all
+                        </button>
+                        <button type="button" class="button button-small button-assertive" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                             <i class="icon  ion-trash-b"></i> Remove all
+                        </button>
+                    </div>
+                        </div>
+                        </ion-scroll>-->
+                </div>
+
+        </div>
+
+                <label class="item item-input">
+          <span class="input-label">Phone number</span>
+          <input type="tel" ng-model="myoffer.phone">
+        </label>
+                <label class="item item-input">
+          <span class="input-label">Email Address</span>
+          <input type="email" ng-model="myoffer.email">
+        </label>
+
+                <label class="item">
+          <button class="button button-block button-positive" type="submit">Send Offer</button>
+        </label>
+    </div></form></ion-content>
+
+
+
+
+</ion-modal-view>

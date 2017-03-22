@@ -1,0 +1,62 @@
+<ion-view view-title="AM Store">
+    <br/><br/><br/>
+<div class="row">
+  <div class="col"> <img src="img/logo1.png" height="120px" style="text-align:center"> </div>
+  <div class="col"> <img src="img/newarrivallogo.jpg" height="120px" style="text-align:center"> </div> 
+
+</div>
+
+<div class="tabs-striped tabs-color-royal">
+<ul class="tabs">
+<li ng-class="{active:isSelected(1)}" class="tab-item">
+<a ng-click="select(1)">New Arrival</a></li>
+<li ng-class="{active:isSelected(2)}" class="tab-item">
+<a ng-click="select(2)">Best Deals</a></li>
+<li ng-class="{active:isSelected(3)}" class="tab-item">
+<a ng-click="select(3)">Popular Products</a></li>
+
+</ul>
+</div>
+ <ion-scroll zooming="true" direction="xy" style="width: auto; height: 400px">    
+<div class="card" ng-repeat="product in products | filter: {state:filtText}" href="#/app/product/{{product.id}}">
+<div class="item item-body item-text-wrap">
+<img class="full-image" ng-src="{{baseURL+product.images[0]}}"
+alt="{{product.name}}">
+<a href="#/app/product/{{product.id}}" ><h2>{{product.name}}
+<span style="font-size:75%">{{product.price | currency}}</span>
+    <span class="badge badge-assertive">{{product.label}}</span></h2></a>
+   
+
+</div>
+     </div></ion-scroll>
+
+  <!--<ion-slides  options="data.sliderOptions" slider="data.sliderDelegate">
+      
+    <ion-slide-page ng-repeat="product in products | filter: {state:filtText}" href="#/app/product/{{product.id}}">
+        <div class="row">
+        <div class="col col-10 col-center">
+            <button class="button icon-left ion-chevron-left button-clear button-dark button-chevron-font-size" ng-click="slidePrevious()">&nbsp;</button>
+            </div>
+        <div class="col col-80">        
+        <div class="box">
+           <div class="card">
+<div class="item item-body item-text-wrap">
+<img class="full-image" ng-src="{{baseURL+product.images[0]}}"
+alt="{{product.name}}" >
+	<a href="#/app/product/{{product.id}}" > <h2>{{product.name}}
+<span style="font-size:75%">{{product.price | currency}}</span>
+        <span class="badge badge-assertive">{{product.label}}</span></h2></a>
+</div> 
+    </div>
+           </div>
+            </div>
+         <div class="col col-10 col-center"> <button class="button icon-left ion-chevron-right button-clear button-dark button-chevron-font-size" ng-click="slideNext()">&nbsp;</button></div>   
+        </div>
+    </ion-slide-page>
+  </ion-slides>-->
+    
+    
+
+</ion-view>
+
+
